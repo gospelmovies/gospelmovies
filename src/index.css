@@ -1,0 +1,20 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background: black;
+}
+@font-face {
+  font-family: openSans-bold;
+  src: url("/src/assets/fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: openSans-regular;
+  src: url("/src/assets/fonts/OpenSans-Medium.ttf");
+}
+@font-face {
+  font-family: BebasNeue-Regular;
+  src: url("/src/assets/fonts/BebasNeue-Regular.ttf");
+}
