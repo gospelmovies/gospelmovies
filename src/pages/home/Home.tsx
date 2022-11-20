@@ -1,9 +1,12 @@
 import Header from "../../components/header/Header";
 import styled from "styled-components";
 import CoverImage from '../../assets/images/btcover.jpeg'
-import StarIcon from '../../assets/images/star.png'
+import StarIcon from '../../assets/images/star2.svg'
 import MovieListing from "../../components/movie-listing";
 import Footer from "../../components/footer/Footer";
+import MobileCover from '../../assets/images/mobCover.jpeg'
+import PlayIconImage from '../../assets/images/play2.svg'
+import TimeImage from '../../assets/images/time.svg'
 
 const Container = styled.div`
   height: 100%;
@@ -23,10 +26,12 @@ const Cover = styled.div`
     height: 500px;
   }
   @media (max-width: 518px) {
-    height: 550px;
+    height: 500px;
   }
   @media (max-width: 425px) {
-    height: 470px;
+    height: 100%;
+    background-image: none;
+    padding-bottom: 35px;
   }
 `;
 const Content = styled.div`
@@ -41,7 +46,7 @@ const Content = styled.div`
     padding: 150px 30px;
   }
   @media (max-width: 425px) {
-    padding: 100px 10px;
+    padding: 5px 20px;
   }
 `;
 const MovieInfo = styled.div`
@@ -58,8 +63,11 @@ const Categories = styled.div`
   align-items: center;
   gap: 28px;
   margin-bottom: 16px;
+  @media (max-width: 525px){
+    gap: 20px
+  }
   @media (max-width: 425px) {
-    gap: 10px;
+    display: none;
   }
 `;
 const Category = styled.div`
@@ -84,6 +92,10 @@ const MovieDescription = styled.p`
     font-size: 12px;
   }
   @media (max-width: 425px) {
+    order: 2;
+    margin-top: 10px;
+    font-family: inter-light;
+    font-size: 11px;
   }
 `;
 const MovieName = styled.div`
@@ -93,29 +105,55 @@ const MovieName = styled.div`
   @media (max-width: 768px) {
     font-size: 3.5rem;
   }
+  @media (max-width: 525px){
+    font-size: 3.0rem
+  }
   @media (max-width: 425px) {
-    font-size: 2.4rem;
+    font-size: 17px;
+    font-family: inter-semi-bold;
   }
 `;
 const Rating = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 21px;
+`;
+const ShortInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 21px;
   margin-bottom: 16px;
+  @media (max-width: 425px){
+    order: 1;
+    margin-top: 19px;
+    margin-bottom: 10px
+  }
 `;
 const Star = styled.img`
   width: 30px;
   height: 30px;
+  @media (max-width: 425px){
+    width: 17px;
+    height: 16px;
+  }
 `;
 const RatingText = styled.div`
   color: #D3D3D3;
   font-size: 18px;
   font-family: openSans-Regular;
+  @media (max-width: 425px){
+    font-size: 13px;
+    line-height: 15px;
+    font-family: inter-medium;
+  }
 `;
 const MovieAction = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
+  @media (max-width: 425px){
+    display: none;
+  }
 `;
 const PlayButton = styled.button`
   background: #8100FF;
@@ -137,9 +175,66 @@ const PreviewButton = styled.button`
   border: 2px solid #8100FF;
   cursor: pointer;
 `;
-
 const Suggested = styled.div``;
-
+const MobileHead = styled.div`
+  background-image: linear-gradient(to top, rgb(0, 0, 0) 1%, rgba(0, 0, 0, 0)), url(${MobileCover});
+  background-position: top;
+  background-size: cover;
+  width: 90%;
+  height: 304px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 65px auto 0 auto;
+  border-radius: 12px;
+  @media (min-width: 426px){
+    display: none;
+  }
+`;
+const PlayIcon = styled.img`
+  width: 37px;
+  height: 37px; 
+`;
+const PlayCover = styled.div`
+  background:rgba(255, 255, 255, 0.16);
+  padding: 12px;
+  border-radius: 51px;
+  border: 1.55px solid #DADADA;
+  backdrop-filter: blur(3.1px);
+`;
+const MobileArrange = styled.div`
+  @media (max-width: 425px){
+    display: flex;
+    flex-direction: column;
+  }
+`;
+const Plot = styled.div`
+  @media (min-width: 426px){
+    display: none;
+  }
+  font-size: 17px;
+  font-family: inter-bold;
+  line-height: 21px;
+  margin-bottom: 7px;
+`;
+const Time = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 13px;
+`;
+const TimeText = styled.div`
+  font-size: 13px;
+  line-height: 15px;
+  font-family: inter-medium;
+  color: #EFEFEF;
+`;
+const TimeIcon = styled.img``;
+const Cat = styled.div`
+  font-size: 13px;
+  font-family: inter-medium;
+  line-height: 15px;
+  color: #EEEEEE;
+`;
 
 function Home() {
     return (
@@ -148,6 +243,12 @@ function Home() {
                 <Header/>
             </header>
             <main>
+                <MobileHead>
+                  <PlayCover>
+                    <PlayIcon src={PlayIconImage} />
+                  </PlayCover>
+                  
+                </MobileHead>
                 <Cover>
                     <Content>
                         <MovieInfo>
@@ -160,16 +261,26 @@ function Home() {
                             <MovieName>
                                 BREAKTHROUGH
                             </MovieName>
+                            <MobileArrange>
                             <MovieDescription>
+                                <Plot>Plot</Plot>
                                 The film tells the story of a St. Louis teenager who slipped through an icy lake in
                                 January 2015 and was underwater for 15 minutes before resuscitative efforts were
                                 started. Although being rescued, he is in a coma, and his family must rely on
                                 their faith to get through the ordeal
                             </MovieDescription>
-                            <Rating>
+                            <ShortInfo>
+                              <Rating>
                                 <Star src={StarIcon}/>
-                                <RatingText>9.9 | 10</RatingText>
+                                <RatingText>9.9</RatingText>
                             </Rating>
+                            <Time>
+                              <TimeIcon src={TimeImage} />
+                              <TimeText>1hr  48min</TimeText>
+                            </Time>
+                            <Cat>Drama</Cat>
+                            </ShortInfo>
+                            </MobileArrange>
                             <MovieAction>
                                 <PlayButton>PLAY NOW</PlayButton>
                                 <PreviewButton>PREVIEW</PreviewButton>
