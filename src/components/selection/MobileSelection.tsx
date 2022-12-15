@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import TrendingTab from '../selection/tabs/TrendingTab'
 
 const Container = styled.div`
   margin-bottom: 50px;
@@ -16,6 +17,8 @@ const Tabs = styled.div`
 `
 const Content = styled.div`
   color: white;
+  padding: 30px 0 0 20px;
+  margin-right: 10px;
 `
 const SText = styled.h3`
   color: white;
@@ -27,10 +30,7 @@ const Link = styled.a<{selected: boolean}>`
   font-size: 15px;
   word-wrap: normal;
 `
-const LinkCover = styled.div<{borderBottom: boolean}>`
-  /* border-bottom: ${({borderBottom}) => borderBottom && '2px solid #d50120'};
-  padding-bottom: 3px; */
-`
+const LinkCover = styled.div``;
 
 interface MenuTypes {
   text: string
@@ -64,9 +64,6 @@ const menuItems: MenuTypes[] = [
   },
 ]
 
-// type SetTabType = React.Dispatch<MenuTypes>
-// type setTabItemType = React.Dispatch<string>
-
 function MobileSelection() {
   const [tab, setTab] = useState('trending')
 
@@ -78,13 +75,13 @@ function MobileSelection() {
     <Container>
       <Tabs>
         {menuItems.map((item: any) => (
-          <LinkCover borderBottom={tab === item.text.toLowerCase()} key={item.text}>
+          <LinkCover key={item.text}>
             <Link selected={tab === item.text.toLowerCase()} onClick={() => handleSelected(item.text.toLowerCase())}>{item.text}</Link>
           </LinkCover>
         ))}
       </Tabs>
       <Content>
-          {tab === 'trending' && <SText>trending</SText>}
+          {tab === 'trending' && <TrendingTab /> }
           {tab === 'new' && <SText>new</SText>}
           {tab === 'hot' && <SText>hot</SText>}
           {tab === 'nigerian' && <SText>nigerian</SText>}

@@ -1,10 +1,18 @@
 import React from 'react'
+import SelectionCard from '../SelectionCard'
+import {
+  Container
+} from '../../../styles/TrendingTab.styled'
 
 function Trending() {
   return (
-    <div>
-      
-    </div>
+    <Container>
+      <SelectionCard />
+      <SelectionCard />
+      <SelectionCard />
+      <SelectionCard />
+      <SelectionCard />
+    </Container>
   )
 }
 
