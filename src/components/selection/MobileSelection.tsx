@@ -21,21 +21,15 @@ const SText = styled.h3`
   color: white;
 `
 const Link = styled.a<{selected: boolean}>`
-  color: ${({selected}) => selected ? 'green' : 'white'};
+  color: ${({selected}) => selected ? '#7A01C6' : 'white'};
   font-family: inter-medium;
   line-height: 18px;
   font-size: 15px;
   word-wrap: normal;
-  white-space: nowrap;
-  &:first-child {
-    color: linear-gradient(180deg, #d50120 0%, #7a01c6 111.11%);
-  }
-  &.active {
-    color: green;
-  }
 `
-const LinkCover = styled.div`
-  /* color: white; */
+const LinkCover = styled.div<{borderBottom: boolean}>`
+  /* border-bottom: ${({borderBottom}) => borderBottom && '2px solid #d50120'};
+  padding-bottom: 3px; */
 `
 
 interface MenuTypes {
@@ -53,8 +47,8 @@ const menuItems: MenuTypes[] = [
     tab: 'new',
   },
   {
-    text: 'Picks',
-    tab: 'picks',
+    text: 'Hot',
+    tab: 'hot',
   },
   {
     text: 'Nigerian',
@@ -84,7 +78,7 @@ function MobileSelection() {
     <Container>
       <Tabs>
         {menuItems.map((item: any) => (
-          <LinkCover key={item.text}>
+          <LinkCover borderBottom={tab === item.text.toLowerCase()} key={item.text}>
             <Link selected={tab === item.text.toLowerCase()} onClick={() => handleSelected(item.text.toLowerCase())}>{item.text}</Link>
           </LinkCover>
         ))}
@@ -92,7 +86,7 @@ function MobileSelection() {
       <Content>
           {tab === 'trending' && <SText>trending</SText>}
           {tab === 'new' && <SText>new</SText>}
-          {tab === 'picks' && <SText>picks</SText>}
+          {tab === 'hot' && <SText>hot</SText>}
           {tab === 'nigerian' && <SText>nigerian</SText>}
           {tab === 'foreign' && <SText>foreign</SText>}
           {tab === 'drama' && <SText>drama</SText>}
