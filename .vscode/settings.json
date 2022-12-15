@@ -1,4 +1,7 @@
 {
     "emmet.showSuggestionsAsSnippets": true,
-    "emmet.useInlineCompletions": true
+    "emmet.useInlineCompletions": true,
+    "emmet.optimizeStylesheetParsing": false,
+    "emmet.showAbbreviationSuggestions": false,
+    "emmet.showExpandedAbbreviation": "never"
 }
