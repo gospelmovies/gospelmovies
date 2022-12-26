@@ -26,4 +26,4 @@ export const PlayButton = styled.button`
     font-size: 10px;
     color: white;
     cursor: pointer;
-`
+`;

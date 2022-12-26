@@ -74,7 +74,7 @@ function MobileSelection() {
   return (
     <Container>
       <Tabs>
-        {menuItems.map((item: any) => (
+        {menuItems.map((item: MenuTypes) => (
           <LinkCover key={item.text}>
             <Link selected={tab === item.text.toLowerCase()} onClick={() => handleSelected(item.text.toLowerCase())}>{item.text}</Link>
           </LinkCover>
