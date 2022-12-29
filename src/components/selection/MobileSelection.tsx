@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import TrendingTab from '../selection/tabs/TrendingTab'
+import VideosTab from './tabs/VideosTab'
 
 const Container = styled.div`
   margin-bottom: 50px;
@@ -59,8 +60,8 @@ const menuItems: MenuTypes[] = [
     tab: 'foreign',
   },
   {
-    text: 'Drama',
-    tab: 'drama',
+    text: 'Videos',
+    tab: 'videos',
   },
 ]
 
@@ -86,7 +87,7 @@ function MobileSelection() {
           {tab === 'hot' && <SText>hot</SText>}
           {tab === 'nigerian' && <SText>nigerian</SText>}
           {tab === 'foreign' && <SText>foreign</SText>}
-          {tab === 'drama' && <SText>drama</SText>}
+          {tab === 'videos' && <VideosTab />}
       </Content>
     </Container>
   )
