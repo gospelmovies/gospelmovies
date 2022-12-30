@@ -16,7 +16,10 @@ import {
   LinkItem,
   HamburgerMenu,
   HamburgerMenuIcon,
-  DropdownMenu
+  DropdownMenu,
+  Ul,
+  Li,
+  LinkItem2
 } from '../../styles/Header.styled'
 
 function Header() {
@@ -30,15 +33,7 @@ function Header() {
             setNavbar(false)
         }
     }
-
-    const closeDropdown = () => {
-      setIsMenuOpen(false)
-    }
-
-    if(isMenuOpen){
-      window.addEventListener('click', closeDropdown)
-    }
-    
+  
 
     window.addEventListener('scroll', changeBackground)
     return(
@@ -66,7 +61,13 @@ function Header() {
            {
             isMenuOpen && (
               <DropdownMenu>
-                hello world
+                <Ul>
+                  <Li><LinkItem2 href='/'>Home</LinkItem2></Li>
+                  <Li><LinkItem2 href='/'>TvShows</LinkItem2></Li>
+                  <Li><LinkItem2 href='/'>Movies</LinkItem2></Li>
+                  <Li><LinkItem2 href='/'>Categories</LinkItem2></Li>
+                  <Li><LinkItem2 href='/'>Search</LinkItem2></Li>
+                </Ul>
               </DropdownMenu>
             )
            }

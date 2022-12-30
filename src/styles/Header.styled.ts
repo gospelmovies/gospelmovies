@@ -92,11 +92,24 @@ export const HamburgerMenuIcon = styled.img`
     color: white;
 `;
 export const DropdownMenu = styled.div`
-    width: 140px;
+    width: 120px;
     height: 150px;
-    background-color: white;
+    background-color: black;
+    border: 1px solid grey;
     position: absolute;
     top: 80%;
     right: 4%;
     border-radius: 3px;
+    padding: 10px 0 0 10px;
+`;
+export const Ul = styled.ul``;
+export const Li = styled.li`
+  list-style: none;
+  padding-bottom: 5px;
+`;
+export const LinkItem2 = styled.a`
+  color: white;
+  text-decoration: none;
+  font-family: openSans-Regular;
+  font-size: 12px;
 `;
