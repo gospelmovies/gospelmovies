@@ -45,3 +45,10 @@ export const FormButton = styled.button`
     margin-top: 10px;
     cursor: pointer;
 `;
+export const PError = styled.p`
+    color: red;
+    font-family: openSans-Regular;
+    font-size: 12px;
+    font-style: italic;
+    padding-top: 3px;
+`;
