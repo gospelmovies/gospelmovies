@@ -31,6 +31,7 @@ function Login() {
         console.log(response.data)
         setEmail('')
         setPassword('')
+        localStorage.setItem('user', response.data.token)
       })
       .catch(error => {
         setLogging(false)

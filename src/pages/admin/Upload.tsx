@@ -2,7 +2,7 @@ import React from 'react'
 
 function Upload() {
   return (
-    <div>
+    <div style={{color: 'white'}}>
       the upload page
     </div>
   )
