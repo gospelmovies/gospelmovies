@@ -10,12 +10,14 @@ import {
   PError
 } from 'styles/Login.styled'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [logging, setLogging] = useState(false)
   const [wrongDetails, setWrongDetails] = useState(false)
+  const navigate = useNavigate()
 
   const formValues = {email: email, password: password}
 
@@ -32,6 +34,7 @@ function Login() {
         setEmail('')
         setPassword('')
         localStorage.setItem('user', response.data.token)
+        navigate('/admin/home')
       })
       .catch(error => {
         setLogging(false)
