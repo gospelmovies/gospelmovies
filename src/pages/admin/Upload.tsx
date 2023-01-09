@@ -1,10 +1,11 @@
 import React from 'react'
+import AdminLayout from 'components/admin/AdminLayout'
 
 function Upload() {
   return (
-    <div style={{color: 'white'}}>
+    <AdminLayout>
       the upload page
-    </div>
+    </AdminLayout>
   )
 }
 

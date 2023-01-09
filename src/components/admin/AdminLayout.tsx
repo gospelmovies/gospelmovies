@@ -4,32 +4,33 @@ import {
   Sidebar,
   Content,
   MenuItem,
-  MenuIcon,
-  MenuLink
+  MenuLink,
+  IconTag,
+  DashboardHeader,
+  Logo,
+  DashboardMenu
 } from 'styles/admin/AdminLayout.style'
-import icon from 'assets/images/notificon.png'
+import logo from 'assets/images/cross.svg'
+import {menu} from 'constants/sharedConstants'
 
-const menu = [
-  {
-    name: 'Dashboard',
-    link: '/admin/dashboard',
-    icon: 'dashboard'
-  },
-  {
-    name: 'Users',
-    link: '/admin/users',
-    icon: 'users'
-  },
-]
 
 const AdminLayout: FunctionComponent<PropsWithChildren> = ({children}) => {
   return (
     <Container>
       <Sidebar>
-        <MenuItem>
-          <MenuIcon src={icon} />
-          <MenuLink href='/'>Upload</MenuLink>
-        </MenuItem>
+        <DashboardHeader>
+          <Logo src={logo} />
+        </DashboardHeader>
+        <DashboardMenu>
+        {
+          menu.map(item => (
+            <MenuItem key={item.name} to={item.link}>
+              <IconTag className={item.icon}></IconTag>
+              <MenuLink>{item.name}</MenuLink>
+            </MenuItem>
+          ))
+        }
+        </DashboardMenu>
       </Sidebar>
       <Content>
         {children}
