@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthentication;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('login', [AdminAuthentication::class, 'login']);
+    Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth:admin');
+    Route::post('post', [PostController::class, 'store'])->middleware('auth:admin');
 });
