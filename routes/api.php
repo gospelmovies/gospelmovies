@@ -22,6 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::get('videos', [PostController::class, 'index']);
+
+
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('login', [AdminAuthentication::class, 'login']);
     Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth:admin');

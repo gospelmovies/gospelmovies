@@ -4,11 +4,26 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
+use App\Http\Resources\VideoResource;
 use App\Models\Category;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+
+    public function index()
+    {
+        $videos = Video::latest()->get();
+
+        return response([
+            'message' => 'success',
+            'videos' =>  VideoResource::collection($videos)
+        ], 200);
+    }
+
+
     public function store(PostRequest $postRequest)
     {
         $postRequest->validated();
