@@ -26,11 +26,13 @@ export const MenuItem = styled(NavLink)`
     align-items: center;
     gap: 10px;
     padding-left: 32px;
-    color: #DDE2FF;
+    color: #A4A6B3;
     text-decoration: none;
     height: 56px;
     &.active{
-        background-color: grey;
+        color: #DDE2FF;
+        background-color: #3e4049;
+        border-left: 1px solid #dde2ff;
     }
 `;
 export const MenuLink = styled.div`

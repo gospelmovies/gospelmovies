@@ -51,7 +51,7 @@ function Suggested() {
     return (
         <Wrapper>
             <SuggestedText>Suggested for you</SuggestedText>
-            {/*image slides here*/} //Todo will extract this to another component
+            {/*image slides here*/}
             <SlideSection>
                <Carousel responsive={responsive}>
                    <a href='/'>

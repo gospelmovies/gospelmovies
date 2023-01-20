@@ -13,12 +13,12 @@ export const menu: DashboardMenuType[] = [
     },
     {
       name: 'Movies',
-      link: '/admin/home',
+      link: '/admin/movies',
       icon: 'fas fa-video'
     },
     {
       name: 'Users',
-      link: '/admin/home',
+      link: '/admin/users',
       icon: 'fas fa-user'
     },
   ]

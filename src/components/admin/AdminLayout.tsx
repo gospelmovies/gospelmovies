@@ -8,7 +8,7 @@ import {
   IconTag,
   DashboardHeader,
   Logo,
-  DashboardMenu
+  DashboardMenu,
 } from 'styles/admin/AdminLayout.style'
 import logo from 'assets/images/cross.svg'
 import {menu} from 'constants/sharedConstants'
@@ -25,8 +25,8 @@ const AdminLayout: FunctionComponent<PropsWithChildren> = ({children}) => {
         {
           menu.map(item => (
             <MenuItem key={item.name} to={item.link}>
-              <IconTag className={item.icon}></IconTag>
-              <MenuLink>{item.name}</MenuLink>
+                <IconTag className={item.icon}></IconTag>
+                <MenuLink>{item.name}</MenuLink>
             </MenuItem>
           ))
         }

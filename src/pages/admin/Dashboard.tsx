@@ -4,6 +4,7 @@ import {
 } from 'styles/admin/Dashboard.styled'
 
 function Dashboard() {
+
   return (
     <AdminLayout>
       Dashboard home
