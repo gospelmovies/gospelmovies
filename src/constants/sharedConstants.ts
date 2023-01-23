@@ -1,4 +1,4 @@
-import { DashboardMenuType } from "types/sharedTypes";
+import { DashboardMenuType, OptionsType } from "types/sharedTypes";
 
 export const menu: DashboardMenuType[] = [
     {
@@ -22,3 +22,9 @@ export const menu: DashboardMenuType[] = [
       icon: 'fas fa-user'
     },
   ]
+
+  export const options: OptionsType[] = [
+    { label: "Drama", value: "drama" },
+    { label: "Comedy", value: "comedy" },
+    { label: "Anime", value: "Anime" },
+  ];

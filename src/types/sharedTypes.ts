@@ -3,3 +3,8 @@ export interface DashboardMenuType {
     link: string;
     icon: string;
 }
+
+export interface OptionsType {
+    label: string;
+    value: string;
+}
