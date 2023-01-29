@@ -25,6 +25,8 @@ class VideoResource extends JsonResource
             'cast' => $this->cast,
             'rating' => $this->rating,
             'file' => $this->file,
+            'thumbnail' => $this->thumbnail,
+            'thriller' => $this->thriller,
             'created_at' => $this->created_at,
             'category' => CategoryResource::collection($this->categories),
         ];

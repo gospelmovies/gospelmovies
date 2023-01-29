@@ -29,8 +29,15 @@ class PostController extends Controller
         $postRequest->validated();
 
         $file = $postRequest->file('file');
+        $thumbnail = $postRequest->file('thum$thumbnail');
+        $thriller = $postRequest->file('thriller');
+
         $filename = uniqid() . $file->getClientOriginalName();
+        $thumbname = uniqid() . $thumbnail->getClientOriginalName();
+        $thrillername = uniqid() . $thriller->getClientOriginalName();
         $file->move(public_path('public/videos'), $filename);
+        $thumbnail->move(public_path('public/thumbnails'), $thumbname);
+        $thriller->move(public_path('public/thrillers'), $thrillername);
 
         $res = auth()->guard('admin')->user()->videos()->create([
             'title' => $postRequest->title,
@@ -41,6 +48,8 @@ class PostController extends Controller
             'cast' => $postRequest->cast,
             'rating' => $postRequest->rating,
             'file' => $filename,
+            'thumbnail' => $thumbname,
+            'thriller' => $thrillername,
         ]);
 
         if ($res) {

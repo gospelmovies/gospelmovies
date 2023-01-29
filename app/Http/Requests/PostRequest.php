@@ -33,6 +33,8 @@ class PostRequest extends FormRequest
             'cast' => 'required',
             'rating' => 'required',
             'file' => 'required|mimes:mp4',
+            'thumbnail' => 'required|mimes:jpeg,jpg,png',
+            'thriller' => 'required|mimes:mp4',
         ];
     }
 }

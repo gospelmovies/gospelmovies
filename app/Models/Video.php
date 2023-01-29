@@ -20,6 +20,8 @@ class Video extends Model
         'cast',
         'rating',
         'file',
+        'thumbnail',
+        'thriller',
         'admin_id',
     ];
 
