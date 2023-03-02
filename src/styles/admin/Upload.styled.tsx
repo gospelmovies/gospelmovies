@@ -19,10 +19,25 @@ export const InputField = styled.input`
     width: 100%;
     height: 40px;
     border: 1px solid #c6c6c6;
-    border-radius: 4px;
-    padding-left: 10px;
+    border-radius: 8px;
+    padding: 1.6em 1em;
+    outline: none;
+    color: gray ; 
+    
+
 `;
+
+
+export const SelectInput = styled.select `
+
+    padding: 0.9em 2em ;
+    cursor: pointer; 
+    outline: none;
+
+`
+
 export const FileInputField = styled.input``;
+
 export const TextArea = styled.textarea`
     width: 100%;
     border: 1px solid #c6c6c6;
@@ -30,6 +45,7 @@ export const TextArea = styled.textarea`
     height: 70px;
     padding: 5px;
 `;
+
 export const PageTitle = styled.div`
     padding-left: 20px;
     padding-top: 20px;

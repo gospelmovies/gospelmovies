@@ -12,6 +12,7 @@ import {
 } from 'styles/admin/AdminLayout.style'
 import logo from 'assets/images/cross.svg'
 import {menu} from 'constants/sharedConstants'
+import DashboardContainer from 'layouts/ContainerLayout'
 
 
 const AdminLayout: FunctionComponent<PropsWithChildren> = ({children}) => {
@@ -33,7 +34,9 @@ const AdminLayout: FunctionComponent<PropsWithChildren> = ({children}) => {
         </DashboardMenu>
       </Sidebar>
       <Content>
-        {children}
+        <DashboardContainer>
+          {children}
+        </DashboardContainer>
       </Content>
     </Container>
   )
